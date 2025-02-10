@@ -1,0 +1,194 @@
+* {box-sizing:border-box;}
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+body { 
+  font-family:'Times New Roman', Times, serif;
+  background-image: url("https://motionbgs.com/media/5599/binary-code-falling.jpg");
+  background-size: contain; 
+}
+
+.heading-primary{
+  text-align: left; 
+  font-family: Arial Black; 
+  font-weight: bold; 
+  font-size: 4rem; 
+  color: #fdfeff;
+  text-shadow: 0 1px 0 #dddddd44, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+}
+
+.heading-primary span{margin-left: 300px;}
+
+.logo{
+  width: 10% ;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+
+h3{color: white;}
+
+h3 span{
+  font-size: 3rem;
+  position: relative;
+  top: 4px;
+  margin: 0 4px 0 4px 
+}
+
+.accordion dl,
+.accordion-list {
+   &:after {
+       content: "";
+       display:block;
+       background-color:darken(#0f2364, 10%);
+     }
+}
+
+.accordion dd,
+.accordion__panel {
+   background-color:#eee;
+   line-height:1.5em; 
+}
+.accordion p {
+  padding:1em 2em 1em 2em;
+}
+
+.accordion {
+    position:relative;
+    background-color:#eee;
+}
+.container {
+  max-width:960px;
+  margin:0 auto;
+  padding:2em 0 2em 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.accordionTitle,
+.accordion__Heading {
+ background-color:#0f2364; 
+   text-align:center;
+     font-weight:700; 
+          padding:3rem;
+          display:block;
+          text-decoration:none;
+          font-size: 1.7rem;
+          color:#e3f5fa;
+          transition:background-color 0.5s ease-in-out;
+  border-bottom:2px solid #e3f5fa;
+  &:before {
+   content: "+";
+   font-size:2em;
+   line-height:0.5em;
+   float:left; 
+   transition: transform 0.3s ease-in-out;
+  }
+  &:hover {
+    background-color:darken(#251e66, 10%);
+  }
+}
+.accordionTitleActive, 
+.accordionTitle.is-expanded {
+   background-color:darken(#062f66, 10%);
+    &:before {
+     
+      transform:rotate(-225deg);
+    }
+}
+.accordionItem {
+    height:auto;
+    overflow:hidden; 
+    max-height:50em;
+    transition:max-height 1s;   
+    
+    @media screen and (min-width:48em) {
+        max-height:15em;
+        transition:max-height 0.5s;
+    }
+
+}
+ 
+.accordionItem.is-collapsed {
+    max-height:0;
+}
+.no-js .accordionItem.is-collapsed {
+  max-height: auto;
+}
+.animateIn {
+     animation: accordionIn 0.45s normal ease-in-out both 1; 
+}
+.animateOut {
+     animation: accordionOut 0.45s alternate ease-in-out both 1;
+}
+@keyframes accordionIn {
+  0% {
+    opacity: 0;
+    transform:scale(0.9) rotateX(-60deg);
+    transform-origin: 50% 0;
+  }
+  100% {
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes accordionOut {
+    0% {
+       opacity: 1;
+       transform:scale(1);
+     }
+     100% {
+          opacity:0;
+           transform:scale(0.9) rotateX(-60deg);
+       }
+}
+
+.question_one{
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  
+}
+
+.client{
+  width: 20%;
+  margin: 10px;
+  border-radius: 5px;
+} 
+
+.list_title{
+  font-weight: 600;
+  color: #203e9f;
+}
+
+
+
+.name_footer{
+  color: #fdfeff;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 769px) {
+  .heading-primary{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .heading-primary span{
+    margin:0 ;
+    
+  }
+
+  .logo{
+    
+    top: 5px;
+  }
+
+  h3{
+    text-align: center;
+  }
+
+  .accordionTitle{
+    font-size: 1.3rem;
+  }
+}
